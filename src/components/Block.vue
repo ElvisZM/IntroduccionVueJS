@@ -1,5 +1,5 @@
 <template>
-    <div class="block" v-if="showBlock">
+    <div class="block" v-if="showBlock" @click="stopTimer">
         Click Me
     </div>
 </template>
@@ -9,7 +9,7 @@ export default {
     props: ['delay'],
     data() {
         return {
-            showBlock: false
+            showBlock: false,
             timer: null,
             reactionTime: 0
         }
@@ -31,9 +31,9 @@ export default {
         stopTimer() {
             clearInterval(this.timer)
         }
-
     }
 }
+
 </script>
 
 <style>
